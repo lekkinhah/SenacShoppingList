@@ -55,7 +55,7 @@ class ShopForm extends React.Component{
                        <option>Selecione</option>
                        {productCategory.map((category) => <option key={category.id} value={category.id} >{category.name}</option>)}
                     </select>
-                    <button>Add</button>
+                    <button>Adicionar</button>
                 </form>
            
         );
