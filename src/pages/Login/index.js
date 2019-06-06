@@ -6,54 +6,33 @@ import {
     Redirect,
     withRouter
   } from "react-router-dom";
+import LoginForm from '../../components/LoginForm';
 
 class Login extends React.Component {
 
     state={
-        user:'',
-        password:'',
-        login:''
-    };
-   
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        
-        const {user, password} = this.state;
-
-        if(user && password){
-          this.setState({login:[{user: user, password: password}]});
-        }
+        credentials: '',
     };
 
-    handleUserChange = (event) => {
-        this.setState({user: event.target.value});
+    handleLoginFormSubmit = (result) => {
+        this.setState({credentials: result});  
+        console.log(result);
     };
-
-    handlePwdChange = (event) => {
-        this.setState({password: event.target.value});
-    };
-
+  
     render(){
 
-        const {login} = this.state;
+        const {credentials} = this.state;
 
-        if(login){
+        if(credentials){
             return(
-                <Redirect to="/"></Redirect>
+                <Redirect to="/Home"></Redirect>
             );
         } else {
 
             return(
                 <Fragment>
                     <div>Olá Login</div>
-                    <form onSubmit={this.handleSubmit}> 
-                        <label>Usuário</label>
-                        <input type="text" id="user" value={this.user} onChange={this.handleUserChange}></input>
-                        <label>Senha</label>
-                        <input type="password" id="password" value={this.password} onChange={this.handlePwdChange}></input>
-                        <button>Entrar</button>
-                    </form>
+                    <LoginForm onSubmit={this.handleLoginFormSubmit}></LoginForm>
                     
                 </Fragment>
             );

@@ -15,10 +15,10 @@ class App extends React.Component {
         <nav>
           <ul>
           <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Login</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/productList/">Produtos</Link>
@@ -26,8 +26,8 @@ class App extends React.Component {
           </ul>
         </nav>
 
-        <Route path="/" exact component={Home} />
-        <Route path="/login/" component={Login} />
+        <Route path="/" exact component={Login} />
+        <Route path="/home/" component={Home} />
         <Route path="/productList/" component={ProductList} />
       </div>
     </Router>
