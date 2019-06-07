@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
-//import './Login.css';
-import './login2.css';
+import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUnlock } from '@fortawesome/free-solid-svg-icons'
 
@@ -50,14 +49,14 @@ class LoginForm extends React.Component {
                         <p>Faça seu login para acessar o sistema:</p>
                         <div className='floating-label'>
                             <label for='user'>Usuário</label>
-                            <input placeholder='Usuário' type="text" id="user" value={this.user} onChange={this.handleUserChange}></input>
+                            <input placeholder='Usuário' type="text" id="user" className='input' value={this.user} onChange={this.handleUserChange}></input>
                             <div class="icon">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
                         </div>
                         <div className='floating-label'>
                         <label for='senha'>Senha</label>
-                        <input placeholder='Senha' type="password" id="password" value={this.password} onChange={this.handlePwdChange}></input>
+                        <input placeholder='Senha' type="password" id="password" className='input' value={this.password} onChange={this.handlePwdChange}></input>
                         <div class="icon">
                                 <FontAwesomeIcon icon={faUnlock} />
                             </div>
