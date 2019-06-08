@@ -39,25 +39,25 @@ class LoginForm extends React.Component {
 
             return(
                    <Fragment>
-                        <div class="session">
-                        <div class="left">
-                            <svg enable-background="new 0 0 300 302.5" version="1.1" viewBox="0 0 300 302.5"></svg>      
+                        <div className="session">
+                        <div className="left">
+                            <svg enableBackground="new 0 0 300 302.5" version="1.1" viewBox="0 0 300 302.5"></svg>      
                         </div>
                    
                    <form onSubmit={this.handleSubmit} className='form'> 
                       <h4>Bem Vindo ... </h4>
                         <p>Faça seu login para acessar o sistema:</p>
                         <div className='floating-label'>
-                            <label for='user'>Usuário</label>
+                            <label htmlFor='user'>Usuário</label>
                             <input placeholder='Usuário' type="text" id="user" className='input' value={this.user} onChange={this.handleUserChange}></input>
-                            <div class="icon">
+                            <div className="icon">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
                         </div>
                         <div className='floating-label'>
-                        <label for='senha'>Senha</label>
+                        <label htmlFor='senha'>Senha</label>
                         <input placeholder='Senha' type="password" id="password" className='input' value={this.password} onChange={this.handlePwdChange}></input>
-                        <div class="icon">
+                        <div className="icon">
                                 <FontAwesomeIcon icon={faUnlock} />
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
      Redirect,
@@ -29,11 +29,7 @@ class Login extends React.Component {
         } else {
 
             return(
-                <Fragment>
-                    <div>Olá Login</div>
-                    <LoginForm onSubmit={this.handleLoginFormSubmit}></LoginForm>
-                    
-                </Fragment>
+                <LoginForm onSubmit={this.handleLoginFormSubmit}></LoginForm>
             );
         }
     }
