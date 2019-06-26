@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import './Login.css';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUnlock } from '@fortawesome/free-solid-svg-icons'
 
@@ -17,14 +18,20 @@ class LoginForm extends React.Component {
         
         if(this.props.onSubmit){
             const credentials= {
-                user: this.state.user,
+                email: this.state.user,
                 password: this.state.password
             };
             this.props.onSubmit(credentials);
-        }
+            console.log("credenciais: ", credentials);
             
-
-        this.setState({user: '', password: ''});
+            axios.post('https://senac-shopping-list-api.herokuapp.com/v1/users/login', credentials)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }  
     };
 
     handleUserChange = (event) => {
